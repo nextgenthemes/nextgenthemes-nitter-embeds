@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 /**
  * Plugin Name:  Private Twitter embeds with Nitter
- * Plugin URI:   http://nextgenthemes.com
- * Description:
+ * Plugin URI:   http://nextgenthemes.com/plugins/nitter-embeds/
+ * Description:  Private Twitter embeds that become YOUR content, that you can style.
  * Author:       Nicolas Jonas
  * Author URI:   http://nextgenthemes.com
  * Version:      0.5.0
- * Text Domain:
  * Domain Path:  languages
  */
 namespace Nextgenthemes\NitterEmbeds;

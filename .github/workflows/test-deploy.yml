@@ -35,7 +35,7 @@ jobs:
       - name: rm -rf symbiosistheme.com
         run: rm -rf symbiosistheme.com
 
-      - name: Checkout ARVE
+      - name: Checkout Nitter Plugins
         uses: actions/checkout@v3
         with:
           path: symbiosistheme.com/web/app/plugins/nextgenthemes-nitter-embeds
@@ -58,7 +58,7 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
       - name: Run PHPUnit without code coverage
-        run: phpunit
+        run: phpunit --testsuite nitter
 
   deploy:
     if: >-
