@@ -35,7 +35,7 @@ jobs:
       - name: rm -rf symbiosistheme.com
         run: rm -rf symbiosistheme.com
 
-      - name: Checkout Nitter Plugins
+      - name: Checkout Nitter Plugin
         uses: actions/checkout@v3
         with:
           path: symbiosistheme.com/web/app/plugins/nextgenthemes-nitter-embeds
@@ -76,8 +76,16 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
+      - name: Checkout ARVE to use action
+        uses: actions/checkout@v3
+        with:
+          repository: nextgenthemes/advanced-responsive-video-embedder
+          ref: master
+          path: arve
+          token: ${{ secrets.REPO_TOKEN }}
+      
       - name: Deploy
-        uses: nextgenthemes/advanced-responsive-video-embedder/actions/wp-plugin-deploy
+        uses: ./arve/actions/wp-plugin-deploy
         with:
           version: ${{ steps.get_version.outputs.VERSION }}
           svn_user: ${{ secrets.SVN_USERNAME }}

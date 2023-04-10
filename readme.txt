@@ -25,6 +25,6 @@ No options yet, but you can use the `nextgenthemes/nitter-embeds/nitter-instance
 
 == Changelog ==
 
-##### 2023-11-04. 0.5.0
+##### 2023-04-11 - 0.5.0
 
 * Initial release
