@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Plugin Name:  Private Twitter embeds with Nitter
  * Plugin URI:   http://nextgenthemes.com
@@ -9,7 +9,6 @@
  * Text Domain:
  * Domain Path:  languages
  */
-
 namespace Nextgenthemes\NitterEmbeds;
 
 const VERSION = '0.5.0';
@@ -43,7 +42,7 @@ function handler_callback_status( array $matches, array $attr, string $url, arra
 	$embed_url           = $nitter_instance_url . '/' . $matches['user_and_status'] . '/embed';
 
 	// we actually get the entire HTML here, NOT just whats inside <body>
-	$html = remote_get_body_cached( $embed_url, [ 'timeout' => 3 ], WEEK_IN_SECONDS );
+	$html = remote_get_body_cached( $embed_url, [ 'timeout' => 2 ], 0 );
 
 	if ( is_wp_error( $html ) ) {
 		return sprintf(
@@ -55,17 +54,12 @@ function handler_callback_status( array $matches, array $attr, string $url, arra
 	\preg_match( '#(?<=body>).*?(?=</body>)#s', $html, $matches );
 
 	$body_html = $matches[0];
-
-	$body_html = str_replace(
-		'href="/',
-		sprintf( 'href="%s/', esc_url($nitter_instance_url) ),
-		$body_html
-	);
-
-	$body_html = str_replace(
-		'src="/',
-		sprintf( 'src="%s/', esc_url($nitter_instance_url) ),
-		$body_html
+	$body_html = strtr(
+		$body_html,
+		[
+			'src="/'  => sprintf( 'src="%s/', esc_url($nitter_instance_url) ),
+			'href="/' => sprintf( 'href="%s/', esc_url($nitter_instance_url) ),
+		]
 	);
 
 	wp_enqueue_style( 'nextgenthemes-nitter' );

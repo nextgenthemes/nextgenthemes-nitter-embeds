@@ -1,0 +1,26 @@
+{
+	"name": "nextgenthemes-nitter-embeds",
+	"description": "",
+	"main": "build/block.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"start": "cd ../../../../.. && npm run start:nextgenthemes-nitter-embeds",
+		"build": "cd ../../../../.. && npm run build:nextgenthemes-nitter-embeds",
+		"test": "cd ../../../../.. && phpunit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nextgenthemes/nextgenthemes-nitter-embeds.git"
+	},
+	"keywords": [
+		"Nitter"
+	],
+	"author": "Nicolas Jonas",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/nextgenthemes/nextgenthemes-nitter-embeds/issues"
+	},
+	"homepage": "https://nextgenthemes.com/plugins/nitter-embeds"
+}

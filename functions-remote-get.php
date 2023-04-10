@@ -1,5 +1,5 @@
 <?php
-namespace Nextgenthemes\ARVE\Common;
+namespace Nextgenthemes\NitterEmbeds;
 
 // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain
 function remote_get_json( $url, array $args = array(), $json_name = false ) {
