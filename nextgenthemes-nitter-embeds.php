@@ -12,6 +12,7 @@ namespace Nextgenthemes\NitterEmbeds;
 
 const VERSION = '0.5.0';
 
+
 add_action( 'init', __NAMESPACE__  . '\init' );
 
 function init() {
