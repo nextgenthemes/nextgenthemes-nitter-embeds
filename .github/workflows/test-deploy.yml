@@ -77,7 +77,7 @@ jobs:
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Deploy
-        uses: ./actions/wp-plugin-deploy
+        uses: nextgenthemes/advanced-responsive-video-embedder/actions/wp-plugin-deploy
         with:
           version: ${{ steps.get_version.outputs.VERSION }}
           svn_user: ${{ secrets.SVN_USERNAME }}
