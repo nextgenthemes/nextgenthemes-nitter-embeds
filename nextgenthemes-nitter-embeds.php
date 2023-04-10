@@ -5,12 +5,12 @@
  * Description:  Private Twitter embeds that become YOUR content, that you can style.
  * Author:       Nicolas Jonas
  * Author URI:   http://nextgenthemes.com
- * Version:      0.5.0
+ * Version:      0.5.1
  * Domain Path:  languages
  */
 namespace Nextgenthemes\NitterEmbeds;
 
-const VERSION = '0.5.0';
+const VERSION = '0.5.1';
 
 
 add_action( 'init', __NAMESPACE__  . '\init' );
